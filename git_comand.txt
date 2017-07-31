@@ -35,3 +35,9 @@ $ git diff --cached git_comand.txt 	//查看暂存区和仓库区的区别
 提交
 $ git commit -m "message"		//提交暂存区内容
 $ git commit -a -m "跳过暂存直接提交"
+---------------------------------------------------------
+删除
+$ git rm git_comand.txt 		//删除版本控制并删除文件
+$ git rm -f git_comand.txt 		//删除版本控制并删除文件 工作区文件有变化需要加-f强制删除
+$ git rm --cached test_ignore.log	//删除版本控制 保留文件 文件处于未跟踪文件清单中
+

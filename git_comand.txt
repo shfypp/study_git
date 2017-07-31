@@ -51,6 +51,11 @@ $ git log -p -2 --pretty=oneline	//查看最近2次提交历史 并查看提交�
 $ git log --stat --pretty=oneline	//查看提交历史 并查看提交的差异 简略统计信息
 $ git log --stat --pretty=oneline --graph	//查看提交历史 并查看提交的差异 简略统计信息 美化显示
 ---------------------------------------------------------
-修改本次提交
-$ git commit --amend	//暂存区从上次提交后没有变化  只修改提交信息
+撤销操作
+--修改本次提交
+$ git commit --amend	//暂存区从上次提交后没有变化,只修改提交信息;暂存区有变化则合并提交到上次的提交中
+--暂存区内容退回到工作区
+$ git reset HEAD git_comand.txt		
+--撤销工作区内容的修改
+$ git checkout git_comand.txt
 

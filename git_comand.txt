@@ -66,4 +66,12 @@ $ git fetch origin		//使用简写URL origin 下载远程车库
 $ git push origin		//使用简写URL origin 上传远程车库
 $ git remote rename pb paul	//重命名远程车库 pb 为 paul
 $ git remote rm paul	//删除远程仓库 paul
-
+---------------------------------------------------------
+使用标签 通常用来发布结点（v1.0 等等）
+$ git tag	//列出所有tag
+$ git show v1.0		//显示tag为v1.0的版本信息
+$ git tag -a v0.0 f0efc -m "项目初始化完成"		//后期打标签 -a 附注标签 f0efc 要追加到的版本 -m tag信息
+$ git tag v1	//添加轻量标签
+$ git push origin v1.0		//把标签v1.0推送到远程库  本地标签需要手动push才能同步到远程库
+$ git push origin --tags	//把所有标签推送到远程库  本地标签需要手动push才能同步到远程库
+$ git checkout -b version0.0 v0.0		//检出标签到一个分支

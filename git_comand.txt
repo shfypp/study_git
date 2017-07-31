@@ -58,4 +58,12 @@ $ git commit --amend	//暂存区从上次提交后没有变化,只修改提交�
 $ git reset HEAD git_comand.txt		
 --撤销工作区内容的修改
 $ git checkout git_comand.txt
+---------------------------------------------------------
+远程仓库的使用
+$ git remote -v			//显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL
+$ git remote show origin	//显示远程库信息
+$ git fetch origin		//使用简写URL origin 下载远程车库
+$ git push origin		//使用简写URL origin 上传远程车库
+$ git remote rename pb paul	//重命名远程车库 pb 为 paul
+$ git remote rm paul	//删除远程仓库 paul
 

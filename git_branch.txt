@@ -1,5 +1,9 @@
-Git分支的使用
+Git 分支 branch
+$ git branch						//分支列表
+$ git branch -v						//各分支最后一次的提交
 $ git checkout -b branch_study		//创建并切换到branch_study
 $ git branch branch_test			//创建分支branch_test	保留在当前分支不切换到新建分支
 $ git checkout branch_test			//切换到分支branch_test
 $ git branch -d branch_test			//删除分支branch_test
+$ git branch --merged				//合并到当前分支中的分支
+$ git branch --no-merged			//未合并到当前分支中的分支

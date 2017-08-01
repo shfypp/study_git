@@ -1,0 +1,5 @@
+Git分支
+$ git checkout -b branch_study		//创建并切换到branch_study
+$ git branch branch_test			//创建分支branch_test	保留在当前分支不切换到新建分支
+$ git checkout branch_test			//切换到分支branch_test
+$ git branch -d branch_test			//删除分支branch_test

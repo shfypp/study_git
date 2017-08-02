@@ -7,3 +7,16 @@ $ git checkout branch_test			//切换到分支branch_test
 $ git branch -d branch_test			//删除分支branch_test
 $ git branch --merged				//合并到当前分支中的分支
 $ git branch --no-merged			//未合并到当前分支中的分支
+---------------------------------------------------------
+远程分支
+$ git ls-remote origin				//获取远程引用的完整列表
+$ git remote show origin			//获取远程分支的详细信息 
+$ git push origin version0			//想远程仓库推送本地库分支version0 本地分支需要手动推送才能共享到远程仓库
+$ git checkout -b home origin/home	//git fetch后本地只有一个origin/home的指针指向改分支，可以用该命令在本地检出新建分支进行工作
+$ git checkout --track origin/home	//上面命令的快捷使用 自动命名为远程分支的名字
+$ git fetch --all					//拉取所有的跟踪
+$ git push origin --delete home		//删除远程仓库的home分支
+---------------------------------------------------------
+跟踪分支
+$ git branch -u origin/master master	//本地master分支跟踪origin/master
+$ git branch --set-upstream-to=origin/home	//或者切换到需要设置的分支下设置跟踪到的远程分支

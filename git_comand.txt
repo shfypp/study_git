@@ -35,6 +35,14 @@ D 删除的文件
 查看改变
 $ git diff git_comand.txt		//查看工作空间和暂存空间的区别
 $ git diff --cached git_comand.txt 	//查看暂存区和仓库区的区别
+$ git diff HEAD //与上次 commit 之间的差别（爸爸）
+$ git diff HEAD^ //与上上次（爷爷）
+$ git diff HEAD^^ //与上上上次（曾祖父）
+$ git diff HEAD~5 //与前面第5次commit（好吧…祖先吧）
+$ git diff HEAD^..HEAD //中间是两个点比较(爸爸)和(爷爷)的差别
+$ git diff f5fdjsalfjdskaf..4fdklsajfdksaf //比较 两个不同 hash 值记录之间的不同
+$ git diff master bird //比较 branch 之间的不同
+$ git diff --since=1.week.ago --until=1.minute.ago //还可以根据时间来比较哦
 ---------------------------------------------------------
 提交
 $ git commit -m "message"		//提交暂存区内容
@@ -50,10 +58,20 @@ $ git mv test_ignore.log test_ignore	//重命名文件
 ---------------------------------------------------------
 查看提交历史
 $ git log --pretty=oneline		//查看提条历史
+$ git log --oneline --stat 		//显示每个文件的变化行数
+$ git log --oneline --graph		//则可以图形化地显示 branch 的变化
 $ git log -p --pretty=oneline	//查看提交历史 并查看历次提交的差异
 $ git log -p -2 --pretty=oneline	//查看最近2次提交历史 并查看提交的差异
 $ git log --stat --pretty=oneline	//查看提交历史 并查看提交的差异 简略统计信息
 $ git log --stat --pretty=oneline --graph	//查看提交历史 并查看提交的差异 简略统计信息 美化显示
+---------------------------------------------------------
+版本回退
+	git reset --hard 6d1a		回退到commit id为6d1a...的版本
+	git reset --hard head^	回退到上一个版本
+				   head 	当前版本
+				   head^^	上上个版本
+				   head~n	当前往上n个版本
+				   
 ---------------------------------------------------------
 撤销操作
 --修改本次提交
@@ -81,4 +99,12 @@ $ git push origin --tags	//把所有标签推送到远程库  本地标签需要
 $ git checkout -b version0.0 v0.0		//检出标签到一个分支
 ---------------------------------------------------------
 Git使用分支
+---------------------------------------------------------
+对于我们日常常用的 git 命令，我们可以通过
+
+$ git config --global alias.ss status //status 缩写成 st
+$ git config --global alias.co checkout //checkout 缩写成 co
+$ git config --global alias.br branch //branch 缩写成 br
+$ git config --global alias.ci commit //commit 缩写成 ci
+
 
